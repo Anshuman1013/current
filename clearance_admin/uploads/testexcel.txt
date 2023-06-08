@@ -1,0 +1,2 @@
+ID,Registration_Number,Name,Roll_Number,Branch,Course,Semester,Section,Session,Year,Mobile_Number,Email
+1,123456,John Doe,2021CSE001,CSE,B.Tech,4,A,A1,2021,9876543210,johndoe@raisoni.net

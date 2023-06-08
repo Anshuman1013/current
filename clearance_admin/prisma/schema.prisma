@@ -1,0 +1,129 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model accounts {
+  ID                  Int     @id @default(autoincrement())
+  Registration_Number String  @db.VarChar(255)
+  Verification        Boolean @default(false)
+
+  @@index([Verification], map: "Verification")
+}
+
+model adminusers {
+  ID       Int    @id @default(autoincrement())
+  username String @db.VarChar(255)
+  password String @db.VarChar(255)
+}
+
+model alumni {
+  ID                  Int     @id @default(autoincrement())
+  Registration_Number String  @db.VarChar(255)
+  Verification        Boolean @default(false)
+
+  @@index([Verification], map: "Verification")
+}
+
+model hod {
+  ID                  Int     @id @default(autoincrement())
+  Registration_Number String  @db.VarChar(255)
+  Verification        Boolean @default(false)
+
+  @@index([Verification], map: "Verification")
+}
+
+model internship {
+  ID                  Int     @id @default(autoincrement())
+  Registration_Number String  @db.VarChar(255)
+  Verification        Boolean @default(false)
+
+  @@index([Verification], map: "Verification")
+}
+
+model library {
+  ID                  Int     @id @default(autoincrement())
+  Registration_Number String  @db.VarChar(255)
+  Verification        Boolean @default(false)
+
+  @@index([Verification], map: "Verification")
+}
+
+model project {
+  ID                  Int     @id @default(autoincrement())
+  Registration_Number String  @db.VarChar(255)
+  Verification        Boolean @default(false)
+
+  @@index([Verification], map: "Verification")
+}
+
+model students {
+  ID                              Int     @id @default(autoincrement())
+  Registration_Number             String  @db.VarChar(255)
+  Name                            String  @db.VarChar(255)
+  Roll_Number                     Int
+  Branch                          String  @db.VarChar(255)
+  Course                          String  @db.VarChar(255)
+  Semester                        String  @db.VarChar(255)
+  Section                         String  @db.VarChar(255)
+  Session                         String  @db.VarChar(255)
+  Year                            Int
+  Mobile_Number                   String  @db.VarChar(255)
+  Email                           String  @db.VarChar(255)
+  Accounts_Verified               Boolean @default(false)
+  Library_Verified                Boolean @default(false)
+  Training_And_Placement_Verified Boolean @default(false) @map("Training_And_Placement Verified")
+  Alumni_Cell_Verified            Boolean @default(false)
+  Project_Verified                Boolean @default(false)
+  Internship_Verified             Boolean @default(false)
+  HOD_Verified                    Boolean @default(false)
+
+  @@index([Accounts_Verified], map: "accounts")
+  @@index([Alumni_Cell_Verified], map: "alumni")
+  @@index([HOD_Verified], map: "hod")
+  @@index([Internship_Verified], map: "internship")
+  @@index([Library_Verified], map: "library")
+  @@index([Project_Verified], map: "project")
+  @@index([Training_And_Placement_Verified], map: "trainingandplacement")
+}
+
+model studentusers {
+  ID       Int    @id @default(autoincrement())
+  username String @db.VarChar(255)
+  password String @db.VarChar(255)
+}
+
+model trainingandplacement {
+  ID                  Int     @id @default(autoincrement())
+  Registration_Number String  @db.VarChar(255)
+  Verification        Boolean @default(false)
+
+  @@index([Verification], map: "Verification")
+}
+
+model upload {
+  ID                  Int    @id @default(autoincrement())
+  Registration_Number String @db.VarChar(255)
+  Name                String @db.VarChar(255)
+  Roll_Number         Int
+  Branch              String @db.VarChar(255)
+  Course              String @db.VarChar(255)
+  Semester            String @db.VarChar(255)
+  Section             String @db.VarChar(255)
+  Session             String @db.VarChar(255)
+  Year                Int
+  Mobile_Number       String @db.VarChar(255)
+  Email               String @db.VarChar(255)
+}
+
+model users {
+  ID             Int    @id @default(autoincrement())
+  username       String @db.VarChar(255)
+  password       String @db.VarChar(255)
+  access_rights  String @db.VarChar(255)
+  user_tablename String @db.VarChar(255)
+}

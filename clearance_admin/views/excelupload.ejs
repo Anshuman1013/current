@@ -1,0 +1,68 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .upload-container {
+        display: flex;
+        justify-content: center;
+      }
+    
+      .upload-button {
+        border: 2px solid black;
+        padding: 2px 8px;
+        background-color: transparent;
+        color: black;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+
+  </head>
+  <body>
+    <main class=" bg-white-100 text-white-100">
+        <section class="bg-white-100 ">
+            <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                <img class="w-20 h-20 mr-2" src="images/logo.png" alt="logo">
+
+                <a href="#" class="flex pt-3 font-mono  items-center mb-6 text-2xl font-semibold text-gray-900 ">
+                    GHRCE Clearance System
+                </a>
+
+                <div class="w-full bg-white-100 rounded-lg shadow-lg  md:mt-0 sm:max-w-md xl:p-0 ">
+                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+
+                        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
+                          Upload Student Data
+                        </h1>
+                       
+                        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
+                           ( Excel File xlsx Format )
+                        </h1>
+                 
+                        <div class="upload-container">
+                          <form class="space-y-4 md:space-y-6" action="/upload" method="post" enctype="multipart/form-data">
+                            <input type="file" name="myfile" />
+                            <input type="submit" value="Upload " class="upload-button"/>
+                            
+                          </form>
+                        </div>
+                       
+                    </div>
+                </div>
+                <br>
+                <a class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" href="/logout">Logout</a>
+            </div>
+          </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  </body>
+</html>

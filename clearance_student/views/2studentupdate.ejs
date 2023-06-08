@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Logged In User Status</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+    crossorigin="anonymous"
+  />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+      rel="stylesheet"
+    />
+   <style>
+   table {
+  width: 500px;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 #ccc;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+.btn-outline-black {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+   </style>
+  </head>
+  <body>
+    <main class="bg-white">
+      <section class="bg-gray-100">
+        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+          <!-- <h1 class="text-3xl font-bold leading-tight font-serif tracking-tight text-gray-900 mt-4">
+            Student Status
+          </h1>
+          <div class="flex">  -->
+            <div>
+              <h1 class="text-3xl text-center font-extrabold leading-tight font-sans-serif tracking-tight text-gray-900 mt-4 uppercase">STUDENT DETAILS</h1>
+
+
+            <table class="w-11/12 mt-6 bg-white border border-gray-100 rounded-lg">
+
+               
+              <tr>
+                <td class="px-4 py-2">Registration Number:</td>
+                <td class="px-4 py-2"><%= status.Registration_Number %></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Name:</td>
+                <td class="px-4 py-2"><%= status.Name %></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Roll Number:</td>
+                <td class="px-4 py-2"><%= status.Roll_Number %></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Branch:</td>
+                <td class="px-4 py-2"><%= status.Branch %></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Course:</td>
+                <td class="px-4 py-2"><%= status.Course %></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Semester:</td>
+                <td class="px-4 py-2"><%= status.Semester %></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Section:</td>
+                <td class="px-4 py-2"><%= status.Section %></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Session:</td>
+                <td class="px-4 py-2"><%= status.Session %></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Year:</td>
+                <td class="px-4 py-2"><%= status.Year %></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Mobile Number:</td>
+                <td class="px-4 py-2"><%= status.Mobile_Number %></td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Email:</td>
+                <td class="px-4 py-2"><%= status.Email %></td>
+              </tr>
+              </table>
+            </div>
+              <div>                    
+                <h1 class="text-3xl text-center font-extrabold leading-tight font-sans-serif tracking-tight text-gray-900 mt-4 uppercase">VERIFICATION STATUS</h1>
+                <table class="w-11/12 mt-6 bg-white border border-gray-100 rounded-lg">
+                  <tr>
+                    <td class="px-4 py-2">Accounts Verified:</td>
+                    <td class="px-4 py-2">
+                      <% if (status.Accounts_Verified === 1) { %>
+                        <span style="color:green">Verified</span>
+                      <% } else { %>
+                        <span style="color:red">Unverified</span>
+                      <% } %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2">Library Verified:</td>
+                    <td class="px-4 py-2">
+                      <% if (status.Library_Verified === 1) { %>
+                        <span style="color:green">Verified</span>
+                      <% } else { %>
+                        <span style="color:red">Unverified</span>
+                      <% } %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2">Training and Placement Verified:</td>
+                    <td class="px-4 py-2">
+                      <% if (status['Training_And_Placement Verified'] === 1) { %>
+                        <span style="color:green">Verified</span>
+                      <% } else { %>
+                        <span style="color:red">Unverified</span>
+                      <% } %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2">Alumni Cell Verified:</td>
+                    <td class="px-4 py-2">
+                      <% if (status.Alumni_Cell_Verified === 1) { %>
+                        <span style="color:green">Verified</span>
+                      <% } else { %>
+                        <span style="color:red">Unverified</span>
+                      <% } %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2">Project Verified:</td>
+                    <td class="px-4 py-2">
+                      <% if (status.Project_Verified === 1) { %>
+                        <span style="color:green">Verified</span>
+                      <% } else { %>
+                        <span style="color:red">Unverified</span>
+                      <% } %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2">Internship Verified:</td>
+                    <td class="px-4 py-2">
+                      <% if (status.Internship_Verified === 1) { %>
+                        <span style="color:green">Verified</span>
+                      <% } else { %>
+                        <span style="color:red">Unverified</span>
+                      <% } %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2">HOD Verified:</td>
+                    <td class="px-4 py-2">
+                      <% if (status.HOD_Verified === 1) { %>
+                        <span style="color:green">Verified</span>
+                      <% } else { %>
+                        <span style="color:red">Unverified</span>
+                      <% } %>
+                    </td>
+                  </tr>
+                </table>
+                </div>
+              
+
+          
+         
+          <% if (
+            status.Accounts_Verified === 1 &&
+            status.Library_Verified === 1 &&
+            status['Training_And_Placement Verified'] === 1 &&
+            status.Alumni_Cell_Verified === 1 &&
+            status.Project_Verified === 1 &&
+            status.Internship_Verified === 1 &&
+            status.HOD_Verified === 1
+          ) { %>
+            <br>
+          <form class="mb-6" method="GET" action="/formgenerate">
+            <button class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" type="submit">Download Form</button>
+          </form>
+          <% } %>
+        
+          <a class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" href="/logout">Logout</a>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
